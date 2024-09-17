@@ -1,0 +1,16 @@
+{
+  "name": "projeto-intermediario-backend",
+  "version": "1.0.0",
+  "description": "Projeto intermediário de Backend do curso de engenharia de software",
+  "author": "Augusto Preis",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.5"
+  }
+}
