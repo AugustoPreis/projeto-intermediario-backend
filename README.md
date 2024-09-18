@@ -14,8 +14,8 @@ Este encurtador de links foi criado como parte da disciplina de Backend, da 4ª 
 
 ##### Rodando o projeto
 
--Criar o banco de dados PostgreSQL
--Criar a tabela de links
+- Criar o banco de dados PostgreSQL
+- Criar a tabela de links
 ```
 CREATE TABLE link (
 	id serial NOT NULL PRIMARY KEY,
@@ -24,7 +24,7 @@ CREATE TABLE link (
 );
 ```
 
--Criar um arquivo chamado .env na pasta raiz do projeto, contendo as seguintes informações:
+- Criar um arquivo chamado .env na pasta raiz do projeto, contendo as seguintes informações:
 ```
 # Alterar as informações conforme necessário
 
@@ -36,8 +36,8 @@ DB_PASS=admin
 DB_PORT=5432
 API_URL=https://api.encurtador.dev/encurtamentos
 ```
--Executar o comando `npm i` na pasta raiz do projeto
--Executar o comando `npm start` na pasta raiz do projeto
+- Executar o comando `npm i` na pasta raiz do projeto
+- Executar o comando `npm start` na pasta raiz do projeto
 
 ### Endpoints
 
