@@ -2,6 +2,12 @@ const pg = require('pg');
 
 const { Pool } = pg;
 
+async function initialize() {
+  const result = await execute(`SELECT TRUE "connected"`);
+
+  return result[0];
+}
+
 async function execute(query, params = []) {
   const pool = createPool();
 
@@ -30,4 +36,4 @@ function createPool() {
   return new Pool(config);
 }
 
-module.exports = { execute };
+module.exports = { initialize, execute };
