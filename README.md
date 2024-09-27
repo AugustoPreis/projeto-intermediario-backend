@@ -6,38 +6,25 @@ Criado por Augusto Preis Tomasi
 
 Este encurtador de links foi criado como parte da disciplina de Backend, da 4ª fase do curso de Engenharia de Software, orientado pelo professor [Ramon Venson](https://gitlab.com/professor-rvenson)
 
-### Configuração
-
-##### Tecnologias necessárias
- - Node.js >= 20
- - PostgreSQL >= 12.15
-
 ##### Rodando o projeto
 
-- Criar o banco de dados PostgreSQL
-- Criar a tabela de links
+- Instalar o [Docker](https://www.docker.com/)
+- Criar um arquivo chamado .env na pasta raiz do projeto, contendo as seguintes informações (alterar conforme necessário):
 ```
-CREATE TABLE link (
-	id serial NOT NULL PRIMARY KEY,
-	original TEXT NOT NULL,
-	encurtado varchar(100) NOT NULL UNIQUE
-);
-```
-
-- Criar um arquivo chamado .env na pasta raiz do projeto, contendo as seguintes informações:
-```
-# Alterar as informações conforme necessário
-
 PORT=8080
+
+API_URL=https://api.encurtador.dev/encurtamentos
+
+IS_DOCKER=FALSE
+DB_IMAGE_NAME=postgres-db
+
 DB_USER=postgres
 DB_HOST=localhost
 DB_NAME=encurtador
 DB_PASS=admin
 DB_PORT=5432
-API_URL=https://api.encurtador.dev/encurtamentos
 ```
-- Executar o comando `npm i` na pasta raiz do projeto
-- Executar o comando `npm start` na pasta raiz do projeto
+- Rodar o seguinte arquivo na pasta raiz do projeto: `docker-compose up`
 
 ### Endpoints
 
