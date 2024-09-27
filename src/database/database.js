@@ -25,13 +25,19 @@ async function execute(query, params = []) {
 }
 
 function createPool() {
+  const { env } = process;
+
   const config = {
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASS,
-    port: process.env.DB_PORT,
+    user: env.DB_USER,
+    host: env.DB_HOST,
+    database: env.DB_NAME,
+    password: env.DB_PASS,
+    port: env.DB_PORT,
   };
+
+  if (env.IS_DOCKER === 'TRUE') {
+    config.host = env.DB_IMAGE_NAME;
+  }
 
   return new Pool(config);
 }
